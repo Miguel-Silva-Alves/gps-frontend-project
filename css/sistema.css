@@ -1,0 +1,164 @@
+body {
+  flex-direction: column;
+  align-items: stretch;
+  background: #f9fafc;
+  padding: 0;
+}
+
+.navbar-custom {
+  background: #1a73e8;
+  color: white;
+  padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar-text {
+  color: #fff;
+}
+
+.btn-logout {
+  background: #fff;
+  color: #1a73e8;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.container-main {
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-title {
+  color: #1a73e8;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-input-group {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.search-input {
+  border: none;
+  padding: 0.5rem;
+  width: 200px;
+  outline: none;
+}
+
+.search-btn {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 0 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-search {
+  color: #e53935;
+  font-size: 0.9rem;
+  align-self: center;
+}
+
+.table-section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table-custom th, .table-custom td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.table-custom th {
+  background: #1a73e8;
+  color: white;
+}
+
+.btn-group a {
+  margin: 0 3px;
+}
+
+.btn-edit {
+  color: #1a73e8;
+}
+
+.btn-delete {
+  color: #e53935;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-add {
+  background: #1a73e8;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.no-data {
+  color: #999;
+}
+
+
+@media (max-width: 768px) {
+  .search-input {
+    width: 100%;
+  }
+
+  .table-custom {
+    font-size: 0.8rem;
+  }
+
+  .table-custom th, .table-custom td {
+    padding: 6px;
+  }
+
+  .table-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
