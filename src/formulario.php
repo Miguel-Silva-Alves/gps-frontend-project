@@ -12,11 +12,14 @@ if(isset($_POST['submit']))
     $cidade = $_POST['cidade'];
     $estado = $_POST['estado'];
     $endereco = $_POST['endereco'];
+    $role = $_POST['role'];
 
-    // Prevenir SQL Injection
-    $stmt = $conexao->prepare("INSERT INTO usuarios(nome, senha, email, telefone, sexo, data_nasc, cidade, estado, endereco) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssssss", $nome, $senha, $email, $telefone, $sexo, $data_nasc, $cidade, $estado, $endereco);
-    
+    $sql = "INSERT INTO usuarios(nome, senha, email, telefone, sexo, data_nasc, cidade, estado, endereco, role)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("ssssssssss", $nome, $senha, $email, $telefone, $sexo, $data_nasc, $cidade, $estado, $endereco, $role);
+
     if($stmt->execute()) {
         header('Location: login.php');
         exit();
@@ -25,6 +28,7 @@ if(isset($_POST['submit']))
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -117,6 +121,16 @@ if(isset($_POST['submit']))
                 <label for="endereco" class="form-label">Endereço</label>
                 <div class="error-message">Por favor, insira seu endereço</div>
             </div>
+
+            <label for="role">Tipo de conta:</label>
+            <select name="role" required>
+                <option value="locatario">Locatário</option>
+                <option value="locador">Locador</option>
+                <option value="admin">Administrador do Sistema</option>
+            </select>
+
+            <br><br>
+
 
             <button type="submit" name="submit" class="submit-btn">Cadastrar</button>
         </form>
